@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBB98A9C-0EAA-4856-B032-3C0A9B52D1BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Internship_4_Employees</RootNamespace>
+    <AssemblyName>Internship-4-Employees</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AddEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEmployees.Designer.cs">
+      <DependentUpon>AddEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddProjects.Designer.cs">
+      <DependentUpon>AddProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteEmployees.Designer.cs">
+      <DependentUpon>DeleteEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteProjects.Designer.cs">
+      <DependentUpon>DeleteProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditProjects.Designer.cs">
+      <DependentUpon>EditProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeDetails.Designer.cs">
+      <DependentUpon>EmployeeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditEmployeeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditEmployeeDetails.Designer.cs">
+      <DependentUpon>EditEmployeeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewEmployees.Designer.cs">
+      <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewProjects.Designer.cs">
+      <DependentUpon>ViewProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectDetails.Designer.cs">
+      <DependentUpon>ProjectDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddEmployees.resx">
+      <DependentUpon>AddEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddProjects.resx">
+      <DependentUpon>AddProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteEmployees.resx">
+      <DependentUpon>DeleteEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteProjects.resx">
+      <DependentUpon>DeleteProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditProjects.resx">
+      <DependentUpon>EditProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeDetails.resx">
+      <DependentUpon>EmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditEmployeeDetails.resx">
+      <DependentUpon>EditEmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewEmployees.resx">
+      <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewProjects.resx">
+      <DependentUpon>ViewProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectDetails.resx">
+      <DependentUpon>ProjectDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Internship-4-Employees.Data\Internship-4-Employees.Data.csproj">
+      <Project>{035954da-c7a8-4462-b252-3ec989d68d0f}</Project>
+      <Name>Internship-4-Employees.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Internship-4-Employees.Domain\Internship-4-Employees.Domain.csproj">
+      <Project>{6ba5d619-51c2-4e66-8389-d558a70d8174}</Project>
+      <Name>Internship-4-Employees.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Internship-4-Employees.Infrastructure\Internship-4-Employees.Infrastructure.csproj">
+      <Project>{8b03ed8f-4440-4639-bd7b-a9ab71d2501b}</Project>
+      <Name>Internship-4-Employees.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
