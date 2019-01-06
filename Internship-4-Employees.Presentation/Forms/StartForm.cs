@@ -65,5 +65,10 @@ namespace Internship_4_Employees.Forms
             var addProjects = new AddProjects();
             addProjects.Show();
         }
+
+        private void StartForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

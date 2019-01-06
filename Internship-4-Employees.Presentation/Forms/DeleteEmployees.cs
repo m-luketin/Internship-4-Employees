@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Internship_4_Employees.Data.Models;
 using Internship_4_Employees.Domain.Repositories;
 
 namespace Internship_4_Employees.Forms
@@ -24,7 +25,7 @@ namespace Internship_4_Employees.Forms
 
         private void deleteEmployeeButton_Click(object sender, EventArgs e)
         {
-
+        
         }
 
         private void deleteEmployeeListBox_SelectedIndexChanged(object sender, EventArgs e)

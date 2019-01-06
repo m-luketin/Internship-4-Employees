@@ -150,6 +150,7 @@
             this.Controls.Add(this.oibTextBox);
             this.Name = "AddEmployees";
             this.Text = "AddEmployees";
+            this.Load += new System.EventHandler(this.AddEmployees_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
