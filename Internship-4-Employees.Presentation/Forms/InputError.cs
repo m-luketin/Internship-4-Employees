@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Internship_4_Employees.Forms
 {
-    public partial class EditEmployeeDetails : Form
+    public partial class InputError : Form
     {
-        public EditEmployeeDetails()
+        public InputError()
         {
             InitializeComponent();
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

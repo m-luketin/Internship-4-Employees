@@ -17,7 +17,7 @@ namespace Internship_4_Employees
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartForm());
+            Application.Run(new MainForm());
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Internship_4_Employees.Data.Models
 
         public override string ToString()
         {
-            return $"{FirstName} {LastName}  {Oib}  {CompanyJob}";
+            return $"{FirstName} {LastName}  {Oib}";
         }
 
         public Employee GetByOibEmployee(string oib, List<Employee> employeeList)

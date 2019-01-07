@@ -34,7 +34,19 @@ namespace Internship_4_Employees.Domain.Repositories
             }
         }
 
-        
+        public static bool AlreadyInList(string oib)
+        {
+            foreach (var employee in AllEmployees)
+            {
+                if (oib == employee.Oib)
+                    return true;
+            }
+            return false;
+        }
 
+        public static List<Employee> GetAllEmployees()
+        {
+            return AllEmployees;
+        }
     }
 }

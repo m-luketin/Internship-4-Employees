@@ -1,6 +1,6 @@
 ﻿namespace Internship_4_Employees.Forms
 {
-    partial class ViewEmployees
+    partial class EmployeeIsSolo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.viewEmployeesListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // viewEmployeesListBox
+            // label1
             // 
-            this.viewEmployeesListBox.FormattingEnabled = true;
-            this.viewEmployeesListBox.ItemHeight = 16;
-            this.viewEmployeesListBox.Location = new System.Drawing.Point(252, 1);
-            this.viewEmployeesListBox.Name = "viewEmployeesListBox";
-            this.viewEmployeesListBox.Size = new System.Drawing.Size(277, 452);
-            this.viewEmployeesListBox.TabIndex = 0;
-            this.viewEmployeesListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label1.Location = new System.Drawing.Point(16, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(901, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cannot remove employee, because he is solo on a project!";
             // 
-            // ViewEmployees
+            // EmployeeIsSolo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.viewEmployeesListBox);
-            this.Name = "ViewEmployees";
-            this.Text = "ViewEmployees";
+            this.ClientSize = new System.Drawing.Size(929, 185);
+            this.Controls.Add(this.label1);
+            this.Name = "EmployeeIsSolo";
+            this.Text = "EmployeeIsSolo";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox viewEmployeesListBox;
+        private System.Windows.Forms.Label label1;
     }
 }

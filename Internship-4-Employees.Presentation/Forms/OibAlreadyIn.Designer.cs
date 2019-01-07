@@ -1,6 +1,6 @@
 ﻿namespace Internship_4_Employees.Forms
 {
-    partial class ViewProjects
+    partial class OibAlreadyIn
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.viewProjectsListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // viewProjectsListBox
+            // label1
             // 
-            this.viewProjectsListBox.FormattingEnabled = true;
-            this.viewProjectsListBox.ItemHeight = 16;
-            this.viewProjectsListBox.Location = new System.Drawing.Point(251, 12);
-            this.viewProjectsListBox.Name = "viewProjectsListBox";
-            this.viewProjectsListBox.Size = new System.Drawing.Size(272, 436);
-            this.viewProjectsListBox.TabIndex = 0;
-            this.viewProjectsListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.label1.Location = new System.Drawing.Point(35, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(479, 48);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "OIB already in database!";
             // 
-            // ViewProjectsForm
+            // OibAlreadyIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.viewProjectsListBox);
-            this.Name = "ViewProjectsForm";
-            this.Text = "viewProjectsForm";
+            this.ClientSize = new System.Drawing.Size(555, 229);
+            this.Controls.Add(this.label1);
+            this.Name = "OibAlreadyIn";
+            this.Text = "OibAlreadyIn";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox viewProjectsListBox;
+        private System.Windows.Forms.Label label1;
     }
 }

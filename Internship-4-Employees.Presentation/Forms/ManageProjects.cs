@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Internship_4_Employees.Data.Models;
 
 namespace Internship_4_Employees.Forms
 {
-    public partial class EmployeeDetails : Form
+    public partial class ManageProjects : Form
     {
-        public EmployeeDetails(Employee exampleEmployee)
+        public ManageProjects()
         {
             InitializeComponent();
-            firstNameTextBox.Text = exampleEmployee.FirstName;
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
