@@ -70,14 +70,14 @@
             this.ViewEmployeesButton.Name = "ViewEmployeesButton";
             this.ViewEmployeesButton.Size = new System.Drawing.Size(99, 74);
             this.ViewEmployeesButton.TabIndex = 3;
-            this.ViewEmployeesButton.Text = "View project employees";
+            this.ViewEmployeesButton.Text = "View ";
             this.ViewEmployeesButton.UseVisualStyleBackColor = true;
             this.ViewEmployeesButton.Click += new System.EventHandler(this.ViewEmployeesButton_Click);
             // 
             // ProjectListBox
             // 
             this.ProjectListBox.FormattingEnabled = true;
-            this.ProjectListBox.Location = new System.Drawing.Point(33, 12);
+            this.ProjectListBox.Location = new System.Drawing.Point(30, 12);
             this.ProjectListBox.Name = "ProjectListBox";
             this.ProjectListBox.Size = new System.Drawing.Size(301, 412);
             this.ProjectListBox.TabIndex = 4;

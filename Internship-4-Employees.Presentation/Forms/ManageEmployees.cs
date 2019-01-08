@@ -39,42 +39,69 @@ namespace Internship_4_Employees.Forms
         }
         private void DeleteEmployeeButton_Click(object sender, EventArgs e)
         {
+            if (EmployeeCheckedListBox.CheckedItems.Count > 0)
+            {
+                var deletePrompt = new DeleteEmployeePrompt();
+                deletePrompt.ShowDialog();
+
+
+                var checkedEmployeeOibList = new List<string>();
+                var oibRegex = new Regex(@"\d{11}");
+
+                foreach (var checkedEmployee in EmployeeCheckedListBox.CheckedItems)
+                {
+                    checkedEmployeeOibList.Add(oibRegex.Match(checkedEmployee.ToString()).Value);
+                }
+
+                foreach (var oib in checkedEmployeeOibList)
+                {
+                    if (MockRelations.NotSoloOnProject(oib))
+                    {
+                        foreach (var relation in MockRelations.GetAllRelations())
+                        {
+                            if (oib == relation.EmployeeOib)
+                            {
+                                MockRelations.AllRelations.Remove(relation);
+                                break;
+                            }
+                        }
+
+                        foreach (var employee in MockEmployees.GetAllEmployees())
+                        {
+                            if (oib == employee.Oib)
+                            {
+                                MockEmployees.AllEmployees.Remove(employee);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var soloWarning = new EmployeeIsSolo();
+                        soloWarning.Show();
+                    }
+                }
+
+                RefreshForm();
+            }
+        }
+
+        private void ViewEmployeeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditEmployeeButton_Click(object sender, EventArgs e)
+        {
             var checkedEmployeeOibList = new List<string>();
             var oibRegex = new Regex(@"\d{11}");
 
             foreach (var checkedEmployee in EmployeeCheckedListBox.CheckedItems)
             {
-                checkedEmployeeOibList.Add(oibRegex.Match(checkedEmployee.ToString()).Value);
+                var editEmployee = new EditEmployee(oibRegex.Match(checkedEmployee.ToString()).Value);
+                editEmployee.ShowDialog();
             }
 
-            foreach (var oib in checkedEmployeeOibList)
-            {
-                if (MockRelations.NotSoloOnProject(oib))
-                {
-                    foreach (var relation in MockRelations.GetAllRelations())
-                    {
-                        if (oib == relation.EmployeeOib)
-                        {
-                            MockRelations.AllRelations.Remove(relation);
-                            break;
-                        }
-                    }
-                
-                    foreach (var employee in MockEmployees.GetAllEmployees())
-                    {
-                        if (oib == employee.Oib)
-                        {
-                            MockEmployees.AllEmployees.Remove(employee);
-                        }
-                    }
-                }
-                else
-                {
-                    var soloWarning = new EmployeeIsSolo();
-                    soloWarning.Show();
-                }
-            }
-            
             RefreshForm();
         }
     }

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Internship_4_Employees.Forms
 {
-    public partial class OibAlreadyIn : Form
+    public partial class DeleteEmployeePrompt : Form
     {
-        public OibAlreadyIn()
+        public DeleteEmployeePrompt()
         {
             InitializeComponent();
+        }
+
+        private void ConfirmDeleteButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void DenyDeleteButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

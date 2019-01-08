@@ -25,15 +25,6 @@ namespace Internship_4_Employees.Domain.Repositories
             AllEmployees.Add(newEmployee);
         }
 
-        public static void RemoveEmployee(string oibForRemoval)
-        {
-            foreach (var employee in AllEmployees)
-            {
-                if (employee.Oib == oibForRemoval)
-                    AllEmployees.Remove(employee);
-            }
-        }
-
         public static bool AlreadyInList(string oib)
         {
             foreach (var employee in AllEmployees)
@@ -47,6 +38,48 @@ namespace Internship_4_Employees.Domain.Repositories
         public static List<Employee> GetAllEmployees()
         {
             return AllEmployees;
+        }
+
+        public static string GetFirstName(string oib)
+        {
+            foreach (var employee in AllEmployees)
+            {
+                if (employee.Oib == oib)
+                    return employee.FirstName;
+            }
+
+            return null;
+        }
+        public static string GetLastName(string oib)
+        {
+            foreach (var employee in AllEmployees)
+            {
+                if (employee.Oib == oib)
+                    return employee.LastName;
+            }
+
+            return null;
+        }
+
+        public static DateTime GetBirthDate(string oib)
+        {
+            foreach (var employee in AllEmployees)
+            {
+                if (employee.Oib == oib)
+                    return employee.BirthDate;
+            }
+            return new DateTime(0, 0, 0);
+        }
+
+        public static string GetJob(string oib)
+        {
+            foreach (var employee in AllEmployees)
+            {
+                if (employee.Oib == oib)
+                    return employee.CompanyJob.ToString();
+            }
+
+            return null;
         }
     }
 }

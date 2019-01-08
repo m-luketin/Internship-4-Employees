@@ -59,6 +59,7 @@ namespace Internship_4_Employees.Forms
                     if (projectName == relation.ProjectName)
                     {
                         MockRelations.AllRelations.Remove(relation);
+                        break;
                     }
                 }
                 RefreshForm();

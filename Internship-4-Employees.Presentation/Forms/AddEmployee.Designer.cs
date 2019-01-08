@@ -39,6 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.ProjectListBox = new System.Windows.Forms.CheckedListBox();
+            this.HoursTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // OibTextBox
@@ -91,7 +94,7 @@
             // 
             // SaveEmployeeButton
             // 
-            this.SaveEmployeeButton.Location = new System.Drawing.Point(253, 349);
+            this.SaveEmployeeButton.Location = new System.Drawing.Point(310, 343);
             this.SaveEmployeeButton.Name = "SaveEmployeeButton";
             this.SaveEmployeeButton.Size = new System.Drawing.Size(116, 65);
             this.SaveEmployeeButton.TabIndex = 5;
@@ -144,11 +147,41 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Job:";
             // 
+            // ProjectListBox
+            // 
+            this.ProjectListBox.FormattingEnabled = true;
+            this.ProjectListBox.Location = new System.Drawing.Point(496, 75);
+            this.ProjectListBox.Name = "ProjectListBox";
+            this.ProjectListBox.Size = new System.Drawing.Size(278, 242);
+            this.ProjectListBox.TabIndex = 11;
+            // 
+            // HoursTextBox
+            // 
+            this.HoursTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.HoursTextBox.Location = new System.Drawing.Point(631, 30);
+            this.HoursTextBox.Name = "HoursTextBox";
+            this.HoursTextBox.ReadOnly = true;
+            this.HoursTextBox.Size = new System.Drawing.Size(143, 22);
+            this.HoursTextBox.TabIndex = 12;
+            this.HoursTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HoursTextBox_KeyDown);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(496, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Hours per week:";
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 450);
+            this.ClientSize = new System.Drawing.Size(796, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.HoursTextBox);
+            this.Controls.Add(this.ProjectListBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -180,5 +213,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckedListBox ProjectListBox;
+        private System.Windows.Forms.TextBox HoursTextBox;
+        private System.Windows.Forms.Label label6;
     }
 }

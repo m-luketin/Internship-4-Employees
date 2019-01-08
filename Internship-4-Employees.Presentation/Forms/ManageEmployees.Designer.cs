@@ -32,22 +32,24 @@
             this.DeleteEmployeeButton = new System.Windows.Forms.Button();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
             this.EmployeeCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.ViewEmployeeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // EditEmployeeButton
             // 
-            this.EditEmployeeButton.Location = new System.Drawing.Point(401, 277);
+            this.EditEmployeeButton.Location = new System.Drawing.Point(415, 345);
             this.EditEmployeeButton.Name = "EditEmployeeButton";
-            this.EditEmployeeButton.Size = new System.Drawing.Size(114, 57);
+            this.EditEmployeeButton.Size = new System.Drawing.Size(114, 80);
             this.EditEmployeeButton.TabIndex = 7;
             this.EditEmployeeButton.Text = "Edit";
             this.EditEmployeeButton.UseVisualStyleBackColor = true;
+            this.EditEmployeeButton.Click += new System.EventHandler(this.EditEmployeeButton_Click);
             // 
             // DeleteEmployeeButton
             // 
-            this.DeleteEmployeeButton.Location = new System.Drawing.Point(401, 198);
+            this.DeleteEmployeeButton.Location = new System.Drawing.Point(415, 238);
             this.DeleteEmployeeButton.Name = "DeleteEmployeeButton";
-            this.DeleteEmployeeButton.Size = new System.Drawing.Size(114, 57);
+            this.DeleteEmployeeButton.Size = new System.Drawing.Size(114, 80);
             this.DeleteEmployeeButton.TabIndex = 6;
             this.DeleteEmployeeButton.Text = "Delete";
             this.DeleteEmployeeButton.UseVisualStyleBackColor = true;
@@ -55,9 +57,9 @@
             // 
             // AddEmployeeButton
             // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(401, 112);
+            this.AddEmployeeButton.Location = new System.Drawing.Point(415, 129);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
-            this.AddEmployeeButton.Size = new System.Drawing.Size(114, 57);
+            this.AddEmployeeButton.Size = new System.Drawing.Size(114, 80);
             this.AddEmployeeButton.TabIndex = 5;
             this.AddEmployeeButton.Text = "Add";
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
@@ -66,16 +68,27 @@
             // EmployeeCheckedListBox
             // 
             this.EmployeeCheckedListBox.FormattingEnabled = true;
-            this.EmployeeCheckedListBox.Location = new System.Drawing.Point(40, 30);
+            this.EmployeeCheckedListBox.Location = new System.Drawing.Point(23, 30);
             this.EmployeeCheckedListBox.Name = "EmployeeCheckedListBox";
-            this.EmployeeCheckedListBox.Size = new System.Drawing.Size(276, 395);
+            this.EmployeeCheckedListBox.Size = new System.Drawing.Size(338, 395);
             this.EmployeeCheckedListBox.TabIndex = 4;
+            // 
+            // ViewEmployeeButton
+            // 
+            this.ViewEmployeeButton.Location = new System.Drawing.Point(415, 30);
+            this.ViewEmployeeButton.Name = "ViewEmployeeButton";
+            this.ViewEmployeeButton.Size = new System.Drawing.Size(114, 80);
+            this.ViewEmployeeButton.TabIndex = 8;
+            this.ViewEmployeeButton.Text = "View";
+            this.ViewEmployeeButton.UseVisualStyleBackColor = true;
+            this.ViewEmployeeButton.Click += new System.EventHandler(this.ViewEmployeeButton_Click);
             // 
             // ManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 458);
+            this.Controls.Add(this.ViewEmployeeButton);
             this.Controls.Add(this.EditEmployeeButton);
             this.Controls.Add(this.DeleteEmployeeButton);
             this.Controls.Add(this.AddEmployeeButton);
@@ -87,10 +100,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button EditEmployeeButton;
         private System.Windows.Forms.Button DeleteEmployeeButton;
         private System.Windows.Forms.Button AddEmployeeButton;
-        private System.Windows.Forms.CheckedListBox EmployeeCheckedListBox;
+        private System.Windows.Forms.Button ViewEmployeeButton;
+        public System.Windows.Forms.Button EditEmployeeButton;
+        public System.Windows.Forms.CheckedListBox EmployeeCheckedListBox;
     }
 }

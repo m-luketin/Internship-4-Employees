@@ -1,6 +1,6 @@
 ﻿namespace Internship_4_Employees.Forms
 {
-    partial class OibAlreadyIn
+    partial class OibAlreadyInError
     {
         /// <summary>
         /// Required designer variable.
@@ -34,20 +34,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label1.Location = new System.Drawing.Point(35, 98);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(479, 48);
+            this.label1.Size = new System.Drawing.Size(290, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "OIB already in database!";
             // 
-            // OibAlreadyIn
+            // OibAlreadyInError
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 229);
+            this.ClientSize = new System.Drawing.Size(336, 85);
             this.Controls.Add(this.label1);
-            this.Name = "OibAlreadyIn";
+            this.Name = "OibAlreadyInError";
             this.Text = "OibAlreadyIn";
             this.ResumeLayout(false);
             this.PerformLayout();

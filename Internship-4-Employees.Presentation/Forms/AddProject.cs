@@ -74,7 +74,8 @@ namespace Internship_4_Employees.Forms
                 dateError.Show();
                 return;
             }
-            else if (ProjectTitleTextBox.Text == "" || HoursTextBox.Text == "")
+            else if (ProjectTitleTextBox.Text == "" || HoursTextBox.Text == "" 
+                      || HoursTextBox.Text == "0" || HoursTextBox.Text == "00")
             {
                 var inputError = new InputsNotFilledError();
                 inputError.Show();

@@ -24,6 +24,11 @@ namespace Internship_4_Employees.Forms
                 JobComboBox.Items.Add(job);
             }
 
+            foreach (var project in MockProjects.AllProjects)
+            {
+                ProjectListBox.Items.Add(project);
+            }
+
             BirthDatePicker.MaxDate = DateTime.Now.Subtract(new TimeSpan(365 * 18, 0, 0, 0));
             BirthDatePicker.MinDate = DateTime.Now.Subtract(new TimeSpan(365 * 100, 0, 0, 0));
 
@@ -41,26 +46,58 @@ namespace Internship_4_Employees.Forms
         }
         private void SaveEmployeeButton_Click(object sender, EventArgs e)
         {
-            if (!MockEmployees.AlreadyInList(OibTextBox.Text))
+            if (MockEmployees.AlreadyInList(OibTextBox.Text))
             {
-                if (InputConditions(OibTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text))
-                {
-                    MockEmployees.AllEmployees.Add(new Employee(FirstNameTextBox.Text, LastNameTextBox.Text,
-                        OibTextBox.Text,
-                        BirthDatePicker.Value, (Job) Enum.Parse(typeof(Job), JobComboBox.Text)));
-                    Close();
-                }
+                var errorMessage = new OibAlreadyInError();
+                errorMessage.Show();
+                return;
+            }
+            else if (!InputConditions(OibTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text))
+            {
+                var errorMessage = new InputError();
+                errorMessage.Show();
+                return;
+            }
+
+            var index = FirstNameTextBox.Text.IndexOf(" ");
+            var firstAndMiddleName = "";
+            var lastName = "";
+            for (var i = 0; i < FirstNameTextBox.TextLength; i++)
+            {
+                if (i == 0)
+                    firstAndMiddleName += char.ToUpper(FirstNameTextBox.Text[0]);
+                else if(i == index + 1)
+                    firstAndMiddleName += char.ToUpper(FirstNameTextBox.Text[index + 1]);
                 else
                 {
-                    var errorMessage = new InputError();
-                    errorMessage.Show();
+                    firstAndMiddleName += FirstNameTextBox.Text[i];
                 }
             }
-            else
+
+            for (var i = 0; i < LastNameTextBox.TextLength; i++)
             {
-                var errorMessage = new OibAlreadyIn();
-                errorMessage.Show();
+                if (i == 0)
+                    lastName += char.ToUpper(LastNameTextBox.Text[0]);
+                else
+                {
+                    lastName += LastNameTextBox.Text[i];
+                }
             }
+            MockEmployees.AllEmployees.Add(new Employee(firstAndMiddleName, lastName,
+                        OibTextBox.Text, BirthDatePicker.Value, (Job) Enum.Parse(typeof(Job), JobComboBox.Text)));
+
+            var projectNamesList = new List<string>();
+            foreach (var checkedItem in ProjectListBox.CheckedItems)
+            {
+                projectNamesList.Add(checkedItem.ToString());
+            }
+
+            foreach (var name in projectNamesList)
+            {
+                MockRelations.AllRelations.Add(new RelationProjectEmployee(name, OibTextBox.Text, int.Parse(HoursTextBox.Text)));
+            }
+            
+            Close(); 
         }
 
         private void OibTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -75,7 +112,7 @@ namespace Internship_4_Employees.Forms
 
         private void FirstNameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue >= 'A' && e.KeyValue <= 'Z')
+            if (e.KeyValue >= 'A' && e.KeyValue <= 'Z' && FirstNameTextBox.TextLength < 15)
             {
                 if(!e.Shift)
                     FirstNameTextBox.Text += char.ToLower((char)e.KeyValue);
@@ -90,7 +127,7 @@ namespace Internship_4_Employees.Forms
 
         private void LastNameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue >= 'A' && e.KeyValue <= 'Z')
+            if (e.KeyValue >= 'A' && e.KeyValue <= 'Z' && LastNameTextBox.TextLength < 10)
             {
                 if (!e.Shift)
                     LastNameTextBox.Text += char.ToLower((char)e.KeyValue);
@@ -101,6 +138,16 @@ namespace Internship_4_Employees.Forms
                 LastNameTextBox.Text += ' ';
             else if ((e.KeyCode & Keys.Back) != 0)
                 LastNameTextBox.Text = "";
+        }
+
+        private void HoursTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue >= '0' && e.KeyValue <= '9' && HoursTextBox.TextLength < 2)
+            {
+                HoursTextBox.Text += e.KeyValue - 48;
+            }
+            else if ((e.KeyCode & Keys.Back) != 0)
+                HoursTextBox.Text = "";
         }
     }
 }

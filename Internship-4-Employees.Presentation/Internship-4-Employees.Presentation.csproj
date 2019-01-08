@@ -64,6 +64,18 @@
     <Compile Include="Forms\DatesNotValidError.Designer.cs">
       <DependentUpon>DatesNotValidError.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeleteEmployeePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteEmployeePrompt.Designer.cs">
+      <DependentUpon>DeleteEmployeePrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeIsSolo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +118,11 @@
     <Compile Include="Forms\ManageProjects.Designer.cs">
       <DependentUpon>ManageProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OibAlreadyIn.cs">
+    <Compile Include="Forms\OibAlreadyInError.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OibAlreadyIn.Designer.cs">
-      <DependentUpon>OibAlreadyIn.cs</DependentUpon>
+    <Compile Include="Forms\OibAlreadyInError.Designer.cs">
+      <DependentUpon>OibAlreadyInError.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProjectInDatabaseError.cs">
       <SubType>Form</SubType>
@@ -138,11 +150,26 @@
     <EmbeddedResource Include="Forms\AddProject.resx">
       <DependentUpon>AddProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatesNotValidError.resx">
+      <DependentUpon>DatesNotValidError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteEmployeePrompt.resx">
+      <DependentUpon>DeleteEmployeePrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeIsSolo.resx">
       <DependentUpon>EmployeeIsSolo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeNotChosenError.resx">
+      <DependentUpon>EmployeeNotChosenError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputError.resx">
       <DependentUpon>InputError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputsNotFilledError.resx">
+      <DependentUpon>InputsNotFilledError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -153,8 +180,11 @@
     <EmbeddedResource Include="Forms\ManageProjects.resx">
       <DependentUpon>ManageProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OibAlreadyIn.resx">
-      <DependentUpon>OibAlreadyIn.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OibAlreadyInError.resx">
+      <DependentUpon>OibAlreadyInError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectInDatabaseError.resx">
+      <DependentUpon>ProjectInDatabaseError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectsAndEmployees.resx">
       <DependentUpon>ProjectsAndEmployees.cs</DependentUpon>

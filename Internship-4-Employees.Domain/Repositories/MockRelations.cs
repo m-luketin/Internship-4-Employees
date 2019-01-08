@@ -43,5 +43,16 @@ namespace Internship_4_Employees.Domain.Repositories
         {
             return AllRelations;
         }
+
+        public static bool IsEmployeeOnProject(string oib)
+        {
+            foreach (var relation in AllRelations)
+            {
+                if (oib == relation.EmployeeOib)
+                    return true;
+            }
+
+            return false;
+        }
     }
 }
