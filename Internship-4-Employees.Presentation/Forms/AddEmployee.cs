@@ -45,7 +45,6 @@ namespace Internship_4_Employees.Forms
             {
                 if (InputConditions(OibTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text))
                 {
-
                     MockEmployees.AllEmployees.Add(new Employee(FirstNameTextBox.Text, LastNameTextBox.Text,
                         OibTextBox.Text,
                         BirthDatePicker.Value, (Job) Enum.Parse(typeof(Job), JobComboBox.Text)));

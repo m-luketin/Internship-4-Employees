@@ -50,12 +50,14 @@ namespace Internship_4_Employees.Forms
         {
             var manageEmployees = new ManageEmployees();
             manageEmployees.Show();
+            RefreshForm();
         }
 
         private void ManageProjectsButton_Click(object sender, EventArgs e)
         {
             var manageProjects = new ManageProjects();
             manageProjects.Show();
+            RefreshForm();
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)

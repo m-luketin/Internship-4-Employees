@@ -65,7 +65,6 @@ namespace Internship_4_Employees.Forms
                         if (oib == employee.Oib)
                         {
                             MockEmployees.AllEmployees.Remove(employee);
-                            break;
                         }
                     }
                 }
