@@ -55,14 +55,18 @@ namespace Internship_4_Employees.Forms
                 {
                     if (MockRelations.NotSoloOnProject(oib))
                     {
-                        foreach (var relation in MockRelations.GetAllRelations())
+                        while (!MockRelations.IsEmployeeDeleted(oib))
                         {
-                            if (oib == relation.EmployeeOib)
+                            foreach (var relation in MockRelations.GetAllRelations())
                             {
-                                MockRelations.AllRelations.Remove(relation);
-                                break;
+                                if (oib == relation.EmployeeOib)
+                                {
+                                    MockRelations.AllRelations.Remove(relation);
+                                    break;
+                                }
                             }
                         }
+
                         foreach (var employee in MockEmployees.GetAllEmployees())
                         {
                             if (oib == employee.Oib)

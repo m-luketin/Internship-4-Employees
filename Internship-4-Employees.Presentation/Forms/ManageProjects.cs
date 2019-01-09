@@ -45,6 +45,7 @@ namespace Internship_4_Employees.Forms
 
             foreach (var projectName in checkedProjectNames)
             {
+                
                 foreach (var project in MockProjects.GetAllProjects())
                 {
                     if (projectName == project.Name)
@@ -54,14 +55,18 @@ namespace Internship_4_Employees.Forms
                     }
                 }
 
-                foreach (var relation in MockRelations.GetAllRelations())
+                while (!MockRelations.IsProjectDeleted(projectName))
                 {
-                    if (projectName == relation.ProjectName)
+                    foreach (var relation in MockRelations.GetAllRelations())
                     {
-                        MockRelations.AllRelations.Remove(relation);
-                        break;
+                        if (projectName == relation.ProjectName)
+                        {
+                            MockRelations.AllRelations.Remove(relation);
+                            break;
+                        }
                     }
                 }
+
                 RefreshForm();
             }
         }

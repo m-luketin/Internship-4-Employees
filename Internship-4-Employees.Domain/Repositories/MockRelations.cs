@@ -10,11 +10,32 @@ namespace Internship_4_Employees.Domain.Repositories
             new RelationProjectEmployee("Split page", "88917811528", 20),
             new RelationProjectEmployee("Split page", "58765811548", 20),
             new RelationProjectEmployee("ARK", "67123811521", 10),
+            new RelationProjectEmployee("eLearning", "67123811521", 10),
             new RelationProjectEmployee("Military", "58765811548", 50),
-            new RelationProjectEmployee("eLearning", "84617852734", 20)
+            new RelationProjectEmployee("eLearning", "84617852734", 20),
+            new RelationProjectEmployee("ARK", "84617852734", 20)
         };
 
+        public static bool IsEmployeeDeleted(string oib)
+        {
+            foreach (var relation in AllRelations)
+            {
+                if (relation.EmployeeOib == oib)
+                    return false;
+            }
 
+            return true;
+        }
+        public static bool IsProjectDeleted(string projectName)
+        {
+            foreach (var relation in AllRelations)
+            {
+                if (relation.ProjectName == projectName)
+                    return false;
+            }
+
+            return true;
+        }
         public static bool NotSoloOnProject(string oib)
         {
             var flag = 0;
