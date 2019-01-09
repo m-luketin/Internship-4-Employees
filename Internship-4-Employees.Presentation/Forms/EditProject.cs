@@ -22,6 +22,10 @@ namespace Internship_4_Employees.Forms
                                                      relation.EmployeeOib);
                 }
             }
+            BeginningDatePicker.MinDate = DateTime.Now.Subtract(new TimeSpan(365 * 20, 0, 0, 0));
+            BeginningDatePicker.MaxDate = DateTime.Now.Add(new TimeSpan(365 * 20, 0, 0, 0));
+            EndDatePicker.MinDate = DateTime.Now.Subtract(new TimeSpan(365 * 20, 0, 0, 0));
+            EndDatePicker.MaxDate = DateTime.Now.Add(new TimeSpan(365 * 20, 0, 0, 0));
         }
         private void RefreshForm(string projectName)
         {

@@ -46,10 +46,13 @@
             // 
             // HoursTextBox
             // 
+            this.HoursTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.HoursTextBox.Location = new System.Drawing.Point(68, 78);
             this.HoursTextBox.Name = "HoursTextBox";
+            this.HoursTextBox.ReadOnly = true;
             this.HoursTextBox.Size = new System.Drawing.Size(163, 22);
             this.HoursTextBox.TabIndex = 8;
+            this.HoursTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HoursTextBox_KeyDown);
             // 
             // ProjectTextBox
             // 

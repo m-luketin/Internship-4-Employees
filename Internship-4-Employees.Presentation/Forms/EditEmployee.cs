@@ -25,6 +25,9 @@ namespace Internship_4_Employees.Forms
                 if(relation.EmployeeOib == checkedOib)
                     ProjectListBox.Items.Add(relation.ProjectName);
             }
+
+            BirthDatePicker.MaxDate = DateTime.Now.Subtract(new TimeSpan(365 * 18, 0, 0, 0));
+            BirthDatePicker.MinDate = DateTime.Now.Subtract(new TimeSpan(365 * 100, 0, 0, 0));
         }
 
         private void SaveEmployeeButton_Click(object sender, EventArgs e)
