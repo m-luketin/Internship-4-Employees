@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Internship_4_Employees.Domain.Repositories;
@@ -16,6 +17,7 @@ namespace Internship_4_Employees.Forms
         public ViewEmployee(string employeeOib)
         {
             InitializeComponent();
+            OibTextBox.Text = employeeOib;
             ViewEmployeeTextBox.Text += MockEmployees.GetFirstName(employeeOib) + " " + MockEmployees.GetLastName(employeeOib) 
                                         + " " + employeeOib + "\n" + MockRelations.GetEmployeeHours(employeeOib) + " hours this week\n"
                                         + MockRelations.NumberOfActiveProjects(employeeOib) + " active projects\n"
@@ -30,7 +32,12 @@ namespace Internship_4_Employees.Forms
             {
                 ViewEmployeeTextBox.BackColor = Color.Red;
             }
+        }
 
-        }       
+        private void EditEmployeeButton_Click(object sender, EventArgs e)
+        {
+            var editEmployee = new EditEmployee(OibTextBox.Text);
+            editEmployee.ShowDialog();
+        }
     }
 }

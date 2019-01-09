@@ -69,6 +69,7 @@ namespace Internship_4_Employees.Forms
                     project.Ending = EndDatePicker.Value;
                 }
             }
+            Close();
         }
 
         private void AddToProjectButton_Click(object sender, EventArgs e)

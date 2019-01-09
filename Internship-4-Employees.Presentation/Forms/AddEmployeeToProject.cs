@@ -34,33 +34,39 @@ namespace Internship_4_Employees.Forms
         {
             var oibRegex = new Regex(@"\d{11}");
 
-            foreach (var item in EmployeeListBox.CheckedItems)
+            if (HoursTextBox.Text == "")
             {
-                foreach (var relation in MockRelations.GetAllRelations())
-                {
-                
-                    if (HoursTextBox.Text == "")
-                    {
-                        var errorMessage = new InputError();
-                        errorMessage.Show();
-                        break;
-                    }
+                var errorMessage = new InputError();
+                errorMessage.Show();
+                return;
+            }
 
-                    if (oibRegex.Match(item.ToString()).Value == relation.EmployeeOib &&
-                        ProjectTextBox.Text == relation.ProjectName)
+            foreach (var relation in MockRelations.GetAllRelations())
+            {   
+                foreach (var item in EmployeeListBox.CheckedItems)
+                {
+                    if (oibRegex.Match(item.ToString()).Value == relation.EmployeeOib && ProjectTextBox.Text == relation.ProjectName)
                     {
                         var errorMessage = new AlreadyOnProjectError();
                         errorMessage.Show();
-                        break;
+                        return;
                     }
-
-                    MockRelations.AllRelations.Add(new RelationProjectEmployee(ProjectTextBox.Text,
-                        oibRegex.Match(item.ToString()).Value, int.Parse(HoursTextBox.Text)));
-                    break;
                 }
             }
-            Close();
+
+            foreach (var relation in MockRelations.GetAllRelations())
+            {
+                foreach (var item in EmployeeListBox.CheckedItems)
+                {
+                    MockRelations.AllRelations.Add(new RelationProjectEmployee(ProjectTextBox.Text,
+                        oibRegex.Match(item.ToString()).Value, int.Parse(HoursTextBox.Text)));
+                    Close();
+                    return;
+                }
+            }
         }
+            
+    
 
         private void HoursTextBox_KeyDown(object sender, KeyEventArgs e)
         {

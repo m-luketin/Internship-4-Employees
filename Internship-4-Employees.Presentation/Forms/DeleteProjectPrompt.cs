@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Internship_4_Employees.Forms
 {
-    public partial class DeleteEmployeePrompt : Form
+    public partial class DeleteProjectPrompt : Form
     {
-        public  DeleteEmployeePrompt()
+        public DeleteProjectPrompt()
         {
             InitializeComponent();
         }

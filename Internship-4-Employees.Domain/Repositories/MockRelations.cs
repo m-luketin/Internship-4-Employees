@@ -36,29 +36,32 @@ namespace Internship_4_Employees.Domain.Repositories
 
             return true;
         }
-        public static bool NotSoloOnProject(string oib)
+        public static bool SoloOnProject(string oib)
         {
             var flag = 0;
+            var employeeProjects = new List<string>();
             foreach (var relation in AllRelations)
             {
                 if (oib == relation.EmployeeOib)
+                    employeeProjects.Add(relation.ProjectName);
+            }
+            foreach (var project in employeeProjects)
+            {
+                foreach (var relation in AllRelations)
                 {
-                    flag = 1;
-                    var tmpProject = relation.ProjectName;
-                    foreach (var rel2 in AllRelations)
+                    if (project == relation.ProjectName && oib != relation.EmployeeOib)
                     {
-                        if (tmpProject == rel2.ProjectName && oib != rel2.EmployeeOib)
-                        {
-                            return true;
-                        }
+                        flag++;
                     }
                 }
-                
+
+                if (flag == 0)
+                    return true;
+                else
+                    flag = 0;
             }
-            if (flag == 1)
-                return false;
-            else
-                return true;
+
+            return false;
         }
 
         public static List<RelationProjectEmployee> GetAllRelations()
@@ -93,8 +96,8 @@ namespace Internship_4_Employees.Domain.Repositories
             foreach (var project in MockProjects.AllProjects)
             {
                 if (project.Name == projectName)
-                    return(project.Ending - DateTime.Now > new TimeSpan(0, 0, 0, 0) ||
-                        DateTime.Now - project.Beginning > new TimeSpan(0, 0, 0, 0));
+                    return(DateTime.Compare(project.Ending, DateTime.Now) > 0 &&
+                        DateTime.Compare(project.Beginning, DateTime.Now) < 0);
             }
 
             return false;
@@ -105,24 +108,23 @@ namespace Internship_4_Employees.Domain.Repositories
             foreach (var project in MockProjects.AllProjects)
             {
                 if (project.Name == projectName)
-                    return (DateTime.Now - project.Ending > new TimeSpan(0, 0, 0, 0) ||
-                            DateTime.Now - project.Beginning > new TimeSpan(0, 0, 0, 0));
+                    return (DateTime.Compare(project.Ending, DateTime.Now) < 0 &&
+                            DateTime.Compare(project.Beginning, DateTime.Now) < 0);
             }
 
             return false;
         }
 
-        public static bool HasProjectBegun(string projectName)
+        public static bool IsProjectPlanned(string projectName)
         {
             foreach (var project in MockProjects.AllProjects)
             {
                 if (project.Name == projectName)
-                    return (project.Ending - DateTime.Now > new TimeSpan(0, 0, 0, 0) ||
-                            project.Beginning - DateTime.Now  > new TimeSpan(0, 0, 0, 0));
-                return false;
+                    return (DateTime.Compare(project.Ending, DateTime.Now) > 0 &&
+                            DateTime.Compare(project.Beginning, DateTime.Now) > 0);
             }
 
-            return true;
+            return false;
 
         }
 
@@ -155,7 +157,7 @@ namespace Internship_4_Employees.Domain.Repositories
             var count = 0;
             foreach (var relation in AllRelations)
             {
-                if (employeeOib == relation.EmployeeOib && !IsProjectOver(relation.ProjectName))
+                if (employeeOib == relation.EmployeeOib && IsProjectPlanned(relation.ProjectName))
                     count++;
             }
 

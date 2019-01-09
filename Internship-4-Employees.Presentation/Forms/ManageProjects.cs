@@ -37,6 +37,15 @@ namespace Internship_4_Employees.Forms
         }
         private void DeleteProjectButton_Click(object sender, EventArgs e)
         {
+            if (ProjectListBox.CheckedItems.Count > 0)
+            {
+                var deletePrompt = new DeleteProjectPrompt().ShowDialog();
+
+                if (deletePrompt == DialogResult.No)
+                    return;
+            }
+                
+
             var checkedProjectNames = new List<string>();
             foreach (var checkedProject in ProjectListBox.CheckedItems)
             {

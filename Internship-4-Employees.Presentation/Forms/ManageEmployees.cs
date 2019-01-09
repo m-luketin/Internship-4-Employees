@@ -40,8 +40,10 @@ namespace Internship_4_Employees.Forms
         {
             if (EmployeeCheckedListBox.CheckedItems.Count > 0)
             {
-                var deletePrompt = new DeleteEmployeePrompt();
-                deletePrompt.ShowDialog();
+                var deletePrompt = new DeleteEmployeePrompt().ShowDialog();
+
+                if (deletePrompt == DialogResult.No)
+                    return;
 
                 var checkedEmployeeOibList = new List<string>();
                 var oibRegex = new Regex(@"\d{11}");
@@ -53,7 +55,7 @@ namespace Internship_4_Employees.Forms
 
                 foreach (var oib in checkedEmployeeOibList)
                 {
-                    if (MockRelations.NotSoloOnProject(oib))
+                    if (!MockRelations.SoloOnProject(oib))
                     {
                         while (!MockRelations.IsEmployeeDeleted(oib))
                         {

@@ -86,10 +86,10 @@ namespace Internship_4_Employees.Forms
                 MockProjects.AllProjects.Add(newProject);
 
             var checkedEmployeesOib = new List<string>();
-            var oibRegex = new Regex(@"/d{11}");
+            var oibRegex = new Regex(@"\d{11}");
             foreach (var employee in ChooseEmployeesListBox.CheckedItems)
             {
-            checkedEmployeesOib.Add(oibRegex.Match(employee.ToString()).Value);
+                checkedEmployeesOib.Add(oibRegex.Match(employee.ToString()).Value);
             }
 
             foreach (var oib in checkedEmployeesOib)
