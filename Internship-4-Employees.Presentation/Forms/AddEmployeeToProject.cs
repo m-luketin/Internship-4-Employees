@@ -26,7 +26,7 @@ namespace Internship_4_Employees.Forms
         {
             var oibRegex = new Regex(@"\d{11}");
 
-            if (HoursTextBox.Text == "")
+            if (HoursTextBox.Text == "" || EmployeeListBox.CheckedItems.Count == 0)
             {
                 var errorMessage = new InputError();
                 errorMessage.Show();
