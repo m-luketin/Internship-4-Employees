@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Internship_4_Employees.Data.Models;
 using Internship_4_Employees.Domain.Repositories;
@@ -75,7 +69,7 @@ namespace Internship_4_Employees.Forms
                 return;
             }
             else if (ProjectTitleTextBox.Text == "" || HoursTextBox.Text == "" 
-                      || HoursTextBox.Text == "0" || HoursTextBox.Text == "00")
+                      || HoursTextBox.Text == "0" || HoursTextBox.Text == "00")//???
             {
                 var inputError = new InputsNotFilledError();
                 inputError.Show();

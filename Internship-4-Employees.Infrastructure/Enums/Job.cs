@@ -10,8 +10,6 @@ namespace Internship_4_Employees.Infrastructure.Enums
     {
         Programmer,
         Accountant,
-        Sanitation,
-        Legal,
         HR,
         SysAdmin,
         Designer,

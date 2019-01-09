@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Internship_4_Employees.Data.Models;
 using Internship_4_Employees.Infrastructure.Enums;
 
@@ -19,8 +16,6 @@ namespace Internship_4_Employees.Domain.Repositories
             new Employee("Alex", "Amanzi", "84617852734", new DateTime(1987, 4, 19), Job.Slicer),
             new Employee("Pero", "Peric", "58765811548", new DateTime(1957, 6, 2), Job.Accountant)
         };
-        
-
         public static bool AlreadyInList(string oib)
         {
             foreach (var employee in AllEmployees)
@@ -30,12 +25,10 @@ namespace Internship_4_Employees.Domain.Repositories
             }
             return false;
         }
-
         public static List<Employee> GetAllEmployees()
         {
             return AllEmployees;
         }
-
         public static string GetFirstName(string oib)
         {
             foreach (var employee in AllEmployees)
@@ -43,7 +36,6 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (employee.Oib == oib)
                     return employee.FirstName;
             }
-
             return null;
         }
         public static string GetLastName(string oib)
@@ -53,7 +45,6 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (employee.Oib == oib)
                     return employee.LastName;
             }
-
             return null;
         }
 
@@ -74,7 +65,6 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (employee.Oib == oib)
                     return employee.CompanyJob.ToString();
             }
-
             return null;
         }
     }

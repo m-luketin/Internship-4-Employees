@@ -15,7 +15,6 @@ namespace Internship_4_Employees.Domain.Repositories
             new RelationProjectEmployee("eLearning", "84617852734", 20),
             new RelationProjectEmployee("ARK", "84617852734", 20)
         };
-
         public static bool IsEmployeeDeleted(string oib)
         {
             foreach (var relation in AllRelations)
@@ -23,7 +22,6 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (relation.EmployeeOib == oib)
                     return false;
             }
-
             return true;
         }
         public static bool IsProjectDeleted(string projectName)
@@ -33,7 +31,6 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (relation.ProjectName == projectName)
                     return false;
             }
-
             return true;
         }
         public static bool SoloOnProject(string oib)
@@ -54,32 +51,17 @@ namespace Internship_4_Employees.Domain.Repositories
                         flag++;
                     }
                 }
-
                 if (flag == 0)
                     return true;
                 else
                     flag = 0;
             }
-
             return false;
         }
-
         public static List<RelationProjectEmployee> GetAllRelations()
         {
             return AllRelations;
         }
-
-        public static bool IsEmployeeOnProject(string oib)
-        {
-            foreach (var relation in AllRelations)
-            {
-                if (oib == relation.EmployeeOib)
-                    return true;
-            }
-
-            return false;
-        }
-
         public static string GetEmployeeHours(string employeeOib)
         {
             var hoursTotal = 0;
@@ -90,7 +72,6 @@ namespace Internship_4_Employees.Domain.Repositories
             }
             return hoursTotal.ToString();
         }
-
         public static bool IsProjectCurrentlyActive(string projectName)
         {
             foreach (var project in MockProjects.AllProjects)
@@ -99,10 +80,8 @@ namespace Internship_4_Employees.Domain.Repositories
                     return(DateTime.Compare(project.Ending, DateTime.Now) > 0 &&
                         DateTime.Compare(project.Beginning, DateTime.Now) < 0);
             }
-
             return false;
         }
-
         public static bool IsProjectOver(string projectName)
         {
             foreach (var project in MockProjects.AllProjects)
@@ -111,10 +90,8 @@ namespace Internship_4_Employees.Domain.Repositories
                     return (DateTime.Compare(project.Ending, DateTime.Now) < 0 &&
                             DateTime.Compare(project.Beginning, DateTime.Now) < 0);
             }
-
             return false;
         }
-
         public static bool IsProjectPlanned(string projectName)
         {
             foreach (var project in MockProjects.AllProjects)
@@ -123,11 +100,8 @@ namespace Internship_4_Employees.Domain.Repositories
                     return (DateTime.Compare(project.Ending, DateTime.Now) > 0 &&
                             DateTime.Compare(project.Beginning, DateTime.Now) > 0);
             }
-
             return false;
-
         }
-
         public static int NumberOfActiveProjects(string employeeOib)
         {
             var count = 0;
@@ -136,10 +110,8 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (employeeOib == relation.EmployeeOib && IsProjectCurrentlyActive(relation.ProjectName))
                     count++;
             }
-
             return count;
         }
-
         public static int NumberOfFinishedProjects(string employeeOib)
         {
             var count = 0;
@@ -148,10 +120,8 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (employeeOib == relation.EmployeeOib && IsProjectOver(relation.ProjectName))
                     count++;
             }
-
             return count;
         }
-
         public static int NumberOfPlannedProjects(string employeeOib)
         {
             var count = 0;
@@ -160,7 +130,6 @@ namespace Internship_4_Employees.Domain.Repositories
                 if (employeeOib == relation.EmployeeOib && IsProjectPlanned(relation.ProjectName))
                     count++;
             }
-
             return count;
         }
     }

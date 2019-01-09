@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Internship_4_Employees.Data.Models;
 using Internship_4_Employees.Domain.Repositories;
@@ -19,10 +12,9 @@ namespace Internship_4_Employees.Forms
         {
             InitializeComponent();
             ProjectTextBox.Text = projectName;
+
             foreach (var employee in MockEmployees.AllEmployees)
-            {
                 EmployeeListBox.Items.Add(employee);
-            }
         }
         private void EmployeeListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -40,7 +32,6 @@ namespace Internship_4_Employees.Forms
                 errorMessage.Show();
                 return;
             }
-
             foreach (var relation in MockRelations.GetAllRelations())
             {   
                 foreach (var item in EmployeeListBox.CheckedItems)
@@ -53,21 +44,14 @@ namespace Internship_4_Employees.Forms
                     }
                 }
             }
-
-            foreach (var relation in MockRelations.GetAllRelations())
+            foreach (var item in EmployeeListBox.CheckedItems)
             {
-                foreach (var item in EmployeeListBox.CheckedItems)
-                {
-                    MockRelations.AllRelations.Add(new RelationProjectEmployee(ProjectTextBox.Text,
-                        oibRegex.Match(item.ToString()).Value, int.Parse(HoursTextBox.Text)));
-                    Close();
-                    return;
-                }
+                MockRelations.AllRelations.Add(new RelationProjectEmployee(ProjectTextBox.Text,
+                    oibRegex.Match(item.ToString()).Value, int.Parse(HoursTextBox.Text)));
+                Close();
+                return;
             }
         }
-            
-    
-
         private void HoursTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue >= '0' && e.KeyValue <= '9' && HoursTextBox.TextLength < 2)

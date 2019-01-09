@@ -28,16 +28,5 @@ namespace Internship_4_Employees.Data.Models
         {
             return $"{FirstName} {LastName}  {Oib}";
         }
-
-        public Employee GetByOibEmployee(string oib, List<Employee> employeeList)
-        {
-            foreach (var employee in employeeList)
-            {
-                if (oib == employee.Oib)
-                    return employee;
-            }
-
-            return null;
-        }
     }
 }

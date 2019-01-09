@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Internship_4_Employees.Domain.Repositories;
 using Internship_4_Employees.Infrastructure.Enums;
@@ -36,7 +29,7 @@ namespace Internship_4_Employees.Forms
 
         private void SaveEmployeeButton_Click(object sender, EventArgs e)
         {
-            var index = FirstNameTextBox.Text.IndexOf(" ");
+            var index = FirstNameTextBox.Text.IndexOf(" ");//???
             var firstAndMiddleName = "";
             var lastName = "";
             for (var i = 0; i < FirstNameTextBox.TextLength; i++)

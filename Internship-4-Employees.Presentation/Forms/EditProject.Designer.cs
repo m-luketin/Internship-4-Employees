@@ -80,7 +80,7 @@
             // 
             // ProjectTitleTextBox
             // 
-            this.ProjectTitleTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.ProjectTitleTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.ProjectTitleTextBox.Location = new System.Drawing.Point(103, 16);
             this.ProjectTitleTextBox.Name = "ProjectTitleTextBox";
             this.ProjectTitleTextBox.ReadOnly = true;

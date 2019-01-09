@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Internship_4_Employees.Data.Models;
 using Internship_4_Employees.Domain.Repositories;
@@ -59,7 +53,7 @@ namespace Internship_4_Employees.Forms
                 return;
             }
 
-            var index = FirstNameTextBox.Text.IndexOf(" ");
+            var index = FirstNameTextBox.Text.IndexOf(" ");// culture-specific? srsly?
             var firstAndMiddleName = "";
             var lastName = "";
             for (var i = 0; i < FirstNameTextBox.TextLength; i++)
