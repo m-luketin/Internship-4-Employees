@@ -23,8 +23,7 @@ namespace Internship_4_Employees.Domain.Repositories
             return AllProjects;
         }
 
-        public static List<string> ProjectsAndEmployeesView(List<Employee> employees,
-            List<RelationProjectEmployee> relations)
+        public static List<string> ProjectsAndEmployeesView()
         {
             var solutionList = new List<string>();
             
@@ -32,9 +31,11 @@ namespace Internship_4_Employees.Domain.Repositories
             foreach (var project in AllProjects)
             {
                 var tmpOibList = new List<string>();
-                var tmpNamesList = new List<string>();
+                var tmpFirstNamesList = new List<string>();
+                var tmpLastNamesList = new List<string>();
                 solutionList.Add(project.Name + "\n");
-                foreach (var relation in relations)
+
+                foreach (var relation in MockRelations.AllRelations)
                 {
                     if (relation.ProjectName == project.Name)
                     {
@@ -42,23 +43,48 @@ namespace Internship_4_Employees.Domain.Repositories
                     }
                 }
 
-                foreach (var employee in employees)
+                foreach (var employee in MockEmployees.AllEmployees)
                 {
                     foreach (var oib in tmpOibList)
                     {
                         if (employee.Oib == oib)
-                            tmpNamesList.Add(employee.FirstName + employee.LastName);
+                        {
+                            tmpFirstNamesList.Add(employee.FirstName);
+                            tmpLastNamesList.Add(employee.LastName);
+                        }
                     }
                 }
 
-                foreach (var name in tmpNamesList)
+
+
+                for(var i = 0; i < tmpFirstNamesList.Count; i++)
                 {
-                    solutionList.Add("\t" + name + "\n");
+                    solutionList.Add("\t" + tmpFirstNamesList[i] + " " + tmpLastNamesList[i] +" - " + MockEmployees.GetJob(tmpOibList[i]) + "\n");
                 }
                 solutionList.Add("\n");
             }
 
             return solutionList;
+        }
+
+        public static DateTime GetBeginningDateTime(string projectName)
+        {
+            foreach (var project in AllProjects)
+            {
+                if (project.Name == projectName)
+                    return project.Beginning;
+            }
+            return new DateTime(0, 0, 0);
+        }
+
+        public static DateTime GetEndingDateTime(string projectName)
+        {
+            foreach (var project in AllProjects)
+            {
+                if (project.Name == projectName)
+                    return project.Ending;
+            }
+            return new DateTime(0, 0, 0);
         }
     }
 }

@@ -52,11 +52,23 @@
     <Compile Include="Forms\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddEmployeeToProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEmployeeToProject.Designer.cs">
+      <DependentUpon>AddEmployeeToProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddProject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AddProject.Designer.cs">
       <DependentUpon>AddProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AlreadyOnProjectError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AlreadyOnProjectError.Designer.cs">
+      <DependentUpon>AlreadyOnProjectError.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DatesNotValidError.cs">
       <SubType>Form</SubType>
@@ -75,6 +87,18 @@
     </Compile>
     <Compile Include="Forms\EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditEmployeeOnProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditEmployeeOnProject.Designer.cs">
+      <DependentUpon>EditEmployeeOnProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditProject.Designer.cs">
+      <DependentUpon>EditProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeIsSolo.cs">
       <SubType>Form</SubType>
@@ -136,6 +160,12 @@
     <Compile Include="Forms\ProjectsAndEmployees.Designer.cs">
       <DependentUpon>ProjectsAndEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ViewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewEmployee.Designer.cs">
+      <DependentUpon>ViewEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectDetails.cs">
       <SubType>Form</SubType>
@@ -147,8 +177,14 @@
     <EmbeddedResource Include="Forms\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEmployeeToProject.resx">
+      <DependentUpon>AddEmployeeToProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProject.resx">
       <DependentUpon>AddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlreadyOnProjectError.resx">
+      <DependentUpon>AlreadyOnProjectError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DatesNotValidError.resx">
       <DependentUpon>DatesNotValidError.cs</DependentUpon>
@@ -158,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditEmployeeOnProject.resx">
+      <DependentUpon>EditEmployeeOnProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditProject.resx">
+      <DependentUpon>EditProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeIsSolo.resx">
       <DependentUpon>EmployeeIsSolo.cs</DependentUpon>
@@ -188,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectsAndEmployees.resx">
       <DependentUpon>ProjectsAndEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewEmployee.resx">
+      <DependentUpon>ViewEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectDetails.resx">
       <DependentUpon>ProjectDetails.cs</DependentUpon>

@@ -53,6 +53,7 @@
             this.EditProjectButton.TabIndex = 1;
             this.EditProjectButton.Text = "Edit";
             this.EditProjectButton.UseVisualStyleBackColor = true;
+            this.EditProjectButton.Click += new System.EventHandler(this.EditProjectButton_Click);
             // 
             // AddProjectButton
             // 
@@ -81,6 +82,7 @@
             this.ProjectListBox.Name = "ProjectListBox";
             this.ProjectListBox.Size = new System.Drawing.Size(301, 412);
             this.ProjectListBox.TabIndex = 4;
+            this.ProjectListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ProjectListBox_ItemCheck);
             // 
             // ManageProjects
             // 

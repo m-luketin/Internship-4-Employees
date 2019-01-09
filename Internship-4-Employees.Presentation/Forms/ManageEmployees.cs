@@ -22,7 +22,6 @@ namespace Internship_4_Employees.Forms
                 EmployeeCheckedListBox.Items.Add(employee);
             }
         }
-
         private void RefreshForm()
         {
             EmployeeCheckedListBox.Items.Clear();
@@ -44,7 +43,6 @@ namespace Internship_4_Employees.Forms
                 var deletePrompt = new DeleteEmployeePrompt();
                 deletePrompt.ShowDialog();
 
-
                 var checkedEmployeeOibList = new List<string>();
                 var oibRegex = new Regex(@"\d{11}");
 
@@ -65,7 +63,6 @@ namespace Internship_4_Employees.Forms
                                 break;
                             }
                         }
-
                         foreach (var employee in MockEmployees.GetAllEmployees())
                         {
                             if (oib == employee.Oib)
@@ -81,16 +78,19 @@ namespace Internship_4_Employees.Forms
                         soloWarning.Show();
                     }
                 }
-
                 RefreshForm();
             }
         }
-
         private void ViewEmployeeButton_Click(object sender, EventArgs e)
         {
-
+            var checkedEmployeeOibList = new List<string>();
+            var oibRegex = new Regex(@"\d{11}");
+            foreach (var checkedEmployee in EmployeeCheckedListBox.CheckedItems)
+            {
+                var viewEmployee = new ViewEmployee(oibRegex.Match(checkedEmployee.ToString()).Value);
+                viewEmployee.ShowDialog();
+            }
         }
-
         private void EditEmployeeButton_Click(object sender, EventArgs e)
         {
             var checkedEmployeeOibList = new List<string>();
@@ -101,8 +101,14 @@ namespace Internship_4_Employees.Forms
                 var editEmployee = new EditEmployee(oibRegex.Match(checkedEmployee.ToString()).Value);
                 editEmployee.ShowDialog();
             }
-
             RefreshForm();
+        }
+
+        private void EmployeeCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (var ix = 0; ix < EmployeeCheckedListBox.Items.Count; ++ix)
+                if (ix != e.Index)
+                    EmployeeCheckedListBox.SetItemChecked(ix, false);
         }
     }
 }

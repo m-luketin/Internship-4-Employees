@@ -7,20 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Internship_4_Employees.Domain.Repositories;
 
 namespace Internship_4_Employees.Forms
 {
-    public partial class ProjectsAndEmployees : Form
+    public partial class AlreadyOnProjectError : Form
     {
-        public ProjectsAndEmployees()
+        public AlreadyOnProjectError()
         {
             InitializeComponent();
-            foreach (var item in MockProjects.ProjectsAndEmployeesView())
-            {
-                ProjectsAndEmployeesListbox.Items.Add(item);
-            }
-            
         }
     }
 }

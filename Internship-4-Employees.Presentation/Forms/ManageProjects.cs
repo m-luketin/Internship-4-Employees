@@ -71,5 +71,21 @@ namespace Internship_4_Employees.Forms
             var projectsAndEmployees = new ProjectsAndEmployees();
             projectsAndEmployees.Show();
         }
+
+        private void EditProjectButton_Click(object sender, EventArgs e)
+        {
+            foreach (var project in ProjectListBox.CheckedItems)
+            {
+                var editProject = new EditProject(project.ToString());
+                editProject.ShowDialog();
+            } 
+        }
+
+        private void ProjectListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            for (var ix = 0; ix < ProjectListBox.Items.Count; ++ix)
+                if (ix != e.Index)
+                    ProjectListBox.SetItemChecked(ix, false);
+        }
     }
 }

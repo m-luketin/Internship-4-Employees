@@ -19,11 +19,7 @@ namespace Internship_4_Employees.Domain.Repositories
             new Employee("Alex", "Amanzi", "84617852734", new DateTime(1987, 4, 19), Job.Slicer),
             new Employee("Pero", "Peric", "58765811548", new DateTime(1957, 6, 2), Job.Accountant)
         };
-
-        public static void AddEmployee(Employee newEmployee)
-        {
-            AllEmployees.Add(newEmployee);
-        }
+        
 
         public static bool AlreadyInList(string oib)
         {

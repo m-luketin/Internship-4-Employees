@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Internship_4_Employees.Data.Models;
 
 namespace Internship_4_Employees.Domain.Repositories
@@ -53,6 +54,91 @@ namespace Internship_4_Employees.Domain.Repositories
             }
 
             return false;
+        }
+
+        public static string GetEmployeeHours(string employeeOib)
+        {
+            var hoursTotal = 0;
+            foreach (var relation in AllRelations)
+            {
+                if (relation.EmployeeOib == employeeOib && IsProjectCurrentlyActive(relation.ProjectName))
+                    hoursTotal += relation.HoursAWeek;
+            }
+            return hoursTotal.ToString();
+        }
+
+        public static bool IsProjectCurrentlyActive(string projectName)
+        {
+            foreach (var project in MockProjects.AllProjects)
+            {
+                if (project.Name == projectName)
+                    return(project.Ending - DateTime.Now > new TimeSpan(0, 0, 0, 0) ||
+                        DateTime.Now - project.Beginning > new TimeSpan(0, 0, 0, 0));
+            }
+
+            return false;
+        }
+
+        public static bool IsProjectOver(string projectName)
+        {
+            foreach (var project in MockProjects.AllProjects)
+            {
+                if (project.Name == projectName)
+                    return (DateTime.Now - project.Ending > new TimeSpan(0, 0, 0, 0) ||
+                            DateTime.Now - project.Beginning > new TimeSpan(0, 0, 0, 0));
+            }
+
+            return false;
+        }
+
+        public static bool HasProjectBegun(string projectName)
+        {
+            foreach (var project in MockProjects.AllProjects)
+            {
+                if (project.Name == projectName)
+                    return (project.Ending - DateTime.Now > new TimeSpan(0, 0, 0, 0) ||
+                            project.Beginning - DateTime.Now  > new TimeSpan(0, 0, 0, 0));
+                return false;
+            }
+
+            return true;
+
+        }
+
+        public static int NumberOfActiveProjects(string employeeOib)
+        {
+            var count = 0;
+            foreach (var relation in AllRelations)
+            {
+                if (employeeOib == relation.EmployeeOib && IsProjectCurrentlyActive(relation.ProjectName))
+                    count++;
+            }
+
+            return count;
+        }
+
+        public static int NumberOfFinishedProjects(string employeeOib)
+        {
+            var count = 0;
+            foreach (var relation in AllRelations)
+            {
+                if (employeeOib == relation.EmployeeOib && IsProjectOver(relation.ProjectName))
+                    count++;
+            }
+
+            return count;
+        }
+
+        public static int NumberOfPlannedProjects(string employeeOib)
+        {
+            var count = 0;
+            foreach (var relation in AllRelations)
+            {
+                if (employeeOib == relation.EmployeeOib && !IsProjectOver(relation.ProjectName))
+                    count++;
+            }
+
+            return count;
         }
     }
 }

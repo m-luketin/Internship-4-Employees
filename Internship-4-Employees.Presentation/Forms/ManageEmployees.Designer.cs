@@ -72,6 +72,7 @@
             this.EmployeeCheckedListBox.Name = "EmployeeCheckedListBox";
             this.EmployeeCheckedListBox.Size = new System.Drawing.Size(338, 395);
             this.EmployeeCheckedListBox.TabIndex = 4;
+            this.EmployeeCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.EmployeeCheckedListBox_ItemCheck);
             // 
             // ViewEmployeeButton
             // 
