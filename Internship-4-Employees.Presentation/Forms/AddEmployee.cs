@@ -46,13 +46,13 @@ namespace Internship_4_Employees.Forms
                 errorMessage.Show();
                 return;
             }
-            else if (!InputConditions(OibTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text))
+            if (!InputConditions(OibTextBox.Text, FirstNameTextBox.Text, LastNameTextBox.Text) || (ProjectListBox.CheckedItems.Count > 0 && (HoursTextBox.Text == "" || HoursTextBox.Text == "0" || HoursTextBox.Text == "00")))
             {
                 var errorMessage = new InputError();
                 errorMessage.Show();
                 return;
             }
-
+            
             var index = FirstNameTextBox.Text.IndexOf(" ");// culture-specific? srsly?
             var firstAndMiddleName = "";
             var lastName = "";
@@ -90,7 +90,7 @@ namespace Internship_4_Employees.Forms
             {
                 MockRelations.AllRelations.Add(new RelationProjectEmployee(name, OibTextBox.Text, int.Parse(HoursTextBox.Text)));
             }
-            
+
             Close(); 
         }
 

@@ -92,6 +92,12 @@ namespace Internship_4_Employees.Forms
 
         private void RemoveEmployeeButton_Click(object sender, EventArgs e)
         {
+            if (ChooseEmployeesListBox.Items.Count < 2)
+            {
+                var errorMessage = new EmployeeIsSolo();
+                errorMessage.Show();
+                return;
+            }
             var oibRegex = new Regex(@"\d{11}");
             foreach (var item in ChooseEmployeesListBox.CheckedItems)
             {

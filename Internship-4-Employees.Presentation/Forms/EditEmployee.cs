@@ -32,6 +32,12 @@ namespace Internship_4_Employees.Forms
 
         private void SaveEmployeeButton_Click(object sender, EventArgs e)
         {
+            if (FirstNameTextBox.Text == "" || LastNameTextBox.Text == "")
+            {
+                var errorMessage = new InputsNotFilledError();
+                errorMessage.Show();
+                return;
+            }
             var index = FirstNameTextBox.Text.IndexOf(" ");//???
             var firstAndMiddleName = "";
             var lastName = "";

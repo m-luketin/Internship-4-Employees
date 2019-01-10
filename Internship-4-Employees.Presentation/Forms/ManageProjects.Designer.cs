@@ -71,7 +71,7 @@
             this.ViewEmployeesButton.Name = "ViewEmployeesButton";
             this.ViewEmployeesButton.Size = new System.Drawing.Size(99, 74);
             this.ViewEmployeesButton.TabIndex = 3;
-            this.ViewEmployeesButton.Text = "View ";
+            this.ViewEmployeesButton.Text = "View all projects";
             this.ViewEmployeesButton.UseVisualStyleBackColor = true;
             this.ViewEmployeesButton.Click += new System.EventHandler(this.ViewEmployeesButton_Click);
             // 

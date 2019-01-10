@@ -7,13 +7,19 @@ namespace Internship_4_Employees.Domain.Repositories
     public static class MockRelations
     {
         public static List<RelationProjectEmployee> AllRelations= new List<RelationProjectEmployee> {
-            new RelationProjectEmployee("Split page", "88917811528", 20),
-            new RelationProjectEmployee("Split page", "58765811548", 20),
+            new RelationProjectEmployee("Split page", "88917811528", 30),
+            new RelationProjectEmployee("Split page", "51761231548", 15),
+            new RelationProjectEmployee("Split page", "38765822548", 20),
+            new RelationProjectEmployee("Split page", "42765832148", 25),
+            new RelationProjectEmployee("ARK", "84617852734", 20),
             new RelationProjectEmployee("ARK", "67123811521", 10),
+            new RelationProjectEmployee("ARK", "18765811548", 15),
+            new RelationProjectEmployee("ARK", "38765822548", 30),
             new RelationProjectEmployee("eLearning", "67123811521", 10),
-            new RelationProjectEmployee("Military", "58765811548", 50),
             new RelationProjectEmployee("eLearning", "84617852734", 20),
-            new RelationProjectEmployee("ARK", "84617852734", 20)
+            new RelationProjectEmployee("eLearning", "51761231548", 30),
+            new RelationProjectEmployee("Military", "51761231548", 50),
+            new RelationProjectEmployee("Military", "84617852734", 30)
         };
         public static bool IsEmployeeDeleted(string oib)
         {
@@ -131,6 +137,17 @@ namespace Internship_4_Employees.Domain.Repositories
                     count++;
             }
             return count;
+        }
+
+        public static bool IsEmployeeOnProject(string employeeOib, string projectName)
+        {
+            foreach (var relation in AllRelations)
+            {
+                if (relation.ProjectName == projectName && relation.EmployeeOib == employeeOib)
+                    return true;
+            }
+
+            return false;
         }
     }
 }
