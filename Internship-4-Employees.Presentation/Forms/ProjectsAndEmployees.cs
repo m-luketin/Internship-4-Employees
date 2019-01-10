@@ -31,20 +31,23 @@ namespace Internship_4_Employees.Forms
             var i = 0;
             foreach (var jobList in projectJobsList)
             {
-                ProjectsAndEmployeesListbox.Items.Add(MockProjects.AllProjects[i]);
+                ProjectsAndEmployeesListbox.Items.Add("\n");
+                ProjectsAndEmployeesListbox.Items.Add("____________________" + MockProjects.AllProjects[i] + "______________________");
 
                 foreach (var job in jobList)
                 {
-                    ProjectsAndEmployeesListbox.Items.Add("\t" + job + "s");
+                    ProjectsAndEmployeesListbox.Items.Add(job + "s");
                     foreach (var employee in MockEmployees.AllEmployees)
                     {
                         if (MockRelations.IsEmployeeOnProject(employee.Oib, MockProjects.AllProjects[i].Name) &&
                             employee.CompanyJob == job)
-                            ProjectsAndEmployeesListbox.Items.Add("\t\t" + employee);
+                            ProjectsAndEmployeesListbox.Items.Add("\t" + employee.FirstName + " " + employee.LastName);
                     }
                 }
                 i++;
             }
+
+            ProjectsAndEmployeesListbox.Items.Add("________________________________________________");
         }
     }
 }

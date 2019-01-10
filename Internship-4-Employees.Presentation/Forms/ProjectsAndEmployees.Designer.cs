@@ -37,14 +37,14 @@
             this.ProjectsAndEmployeesListbox.ItemHeight = 16;
             this.ProjectsAndEmployeesListbox.Location = new System.Drawing.Point(-1, 3);
             this.ProjectsAndEmployeesListbox.Name = "ProjectsAndEmployeesListbox";
-            this.ProjectsAndEmployeesListbox.Size = new System.Drawing.Size(325, 436);
+            this.ProjectsAndEmployeesListbox.Size = new System.Drawing.Size(385, 580);
             this.ProjectsAndEmployeesListbox.TabIndex = 0;
             // 
             // ProjectsAndEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 516);
+            this.ClientSize = new System.Drawing.Size(383, 583);
             this.Controls.Add(this.ProjectsAndEmployeesListbox);
             this.Name = "ProjectsAndEmployees";
             this.Text = "ProjectsAndEmployeescs";

@@ -18,7 +18,9 @@ namespace Internship_4_Employees.Domain.Repositories
             new RelationProjectEmployee("eLearning", "67123811521", 10),
             new RelationProjectEmployee("eLearning", "84617852734", 20),
             new RelationProjectEmployee("eLearning", "51761231548", 30),
+            new RelationProjectEmployee("eLearning", "28917811548", 30),
             new RelationProjectEmployee("Military", "51761231548", 50),
+            new RelationProjectEmployee("Military", "28917811548", 50),
             new RelationProjectEmployee("Military", "84617852734", 30)
         };
         public static bool IsEmployeeDeleted(string oib)
